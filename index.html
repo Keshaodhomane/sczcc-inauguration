@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <style>
+
+            body,
+            html {
+                width: 100%;
+                position: relative;
+                margin: 0;
+                padding: 0;
+            }
+
+            video#myvideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                min-width: 100%;
+                width: auto;
+                height: auto;
+                z-index: -100;
+            }
+
+
+            #playbutton
+            {
+              
+              width: 100px;
+              height: 100px;
+              display: block;
+              position: absolute;
+              z-index: 100;
+              left:calc(50% - 50px);
+              top:370px;
+              cursor: pointer;
+              opacity: 1;
+              
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+
+
+        <video id="myvideo">
+            <source src="final.mp4" " type=" video/mp4"="video/mp4"">
+        </video>
+
+
+        <audio controls id="soundfile">
+            <source src="applause.mp3" type="audio/mp3">
+        </audio>
+
+        <div id="playbutton" onclick="">
+          <img src="play-button.svg" width="100" alt="">
+        </div>
+
+
+
+        <script type='text/javascript'>
+
+          var video1 = document.getElementById('myvideo');
+          var btn1 = document.getElementById('playbutton');
+          var snd = document.getElementById("soundfile");
+
+          document.getElementById('myvideo').addEventListener('ended',myHandler,false);
+          function myHandler(e) {
+
+              window.location.href="https://www.sczcc.gov.in";
+
+          }
+
+        btn1.addEventListener( 'click', function() {
+          video1.play();
+          snd.play();
+          this.style.opacity = "0"; 
+
+        });
+          
+
+      </script>
+    </body>
+</html>
